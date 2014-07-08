@@ -37,6 +37,12 @@ $(function () {
 // fancybox弹窗相册
 function fancybox () {
 	if ($(".fancybox").length > 0) {
-		$('.fancybox').fancybox();
+		$('.fancybox').fancybox({
+			prevEffect : 'none',
+			nextEffect : 'none',
+			closeBtn  : false,
+			arrows    : true,
+			nextClick : true
+		});
 	};
 }
