@@ -1,6 +1,7 @@
 $(function () {
 
 	// 页面效果
+	experience();  //首页个人经历时间轴
 
 	// 基础功能
 
@@ -16,6 +17,15 @@ $(function () {
 //*********************************************************************//
 //                              页面效果                               //
 //*********************************************************************//
+
+
+// 首页个人经历时间轴
+function experience () {
+	if ($(".index .experience").length > 0) {
+		$(".index .experience .item:even").addClass("even");
+		$(".index .experience .item:odd").addClass("odd");
+	};
+}
 
 
 
