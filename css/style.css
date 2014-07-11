@@ -16,7 +16,7 @@ a:hover { color: #1a4c9f; }
 
 
 /***********************************************************************/
-/*                              共用模块                               */
+/*                              公用模块                               */
 /***********************************************************************/
 
 
@@ -59,7 +59,7 @@ a:hover { color: #1a4c9f; }
 
 
 /*首屏*/
-.index .banner { padding: 20em 0; background: url(../images/banner_bg.jpg) no-repeat center top; background-size: cover; }
+.index .banner { padding: 20em 0; background: url(../images/banner_bg.jpg) no-repeat center top fixed; background-size: cover; }
 .index .banner .text1 { float: left; width: 478px; height: 111px; background: url(../images/banner_text1.png) no-repeat left center; }
 .index .banner .text2 { float: right; width: 274px; height: 21px; margin: 40px 0 0; background: url(../images/banner_text2.png) no-repeat left center; }
 
@@ -108,7 +108,11 @@ a:hover { color: #1a4c9f; }
 .index .works .title p i:after { background: #8a8989; opacity: .15; }
 .index .works ul { display: table; width: 100%; background: #eaeaea; }
 .index .works ul li { display: table-cell; width: 33.33%; vertical-align: middle; text-align: center; }
-.index .works ul li a { display: table; width: 100%; }
+.index .works ul li a { display: table; width: 100%;
+	transition: opacity .3s ease-in;
+	-webkit-transition: opacity .3s ease-in;
+}
+.index .works ul li a:hover { opacity: .7; }
 .index .works ul li a div { display: table-cell; width: 50%; vertical-align: middle; text-align: center; }
 .index .works ul li a .icon { padding: 100px 0; }
 .index .works ul li a .icon span { display: inline-block; width: 150px; height: 150px; background: url(../images/works_icon.png) no-repeat; }
@@ -137,7 +141,7 @@ a:hover { color: #1a4c9f; }
 
 
 /*技能*/
-.index .skills { padding: 5em 0 8em; background: url(../images/skills_bg.jpg) no-repeat center top; background-size: cover; }
+.index .skills { padding: 5em 0 8em; background: url(../images/skills_bg.jpg) no-repeat center top fixed; background-size: cover; }
 .index .skills .title h1 { color: #fff; }
 .index .skills .title span { color: #fff; opacity: .85; }
 .index .skills .title p i:before { background: #fff; opacity: .15; }
@@ -184,7 +188,7 @@ a:hover { color: #1a4c9f; }
 
 /*首屏*/
 .works_list { background: #363636; }
-.works_list .banner { padding: 8em 0 4em; background: url(../images/skills_bg.jpg) no-repeat center top; background-size: cover; text-align: center; position: relative; }
+.works_list .banner { padding: 8em 0 4em; background: url(../images/skills_bg.jpg) no-repeat center top fixed; background-size: cover; text-align: center; position: relative; }
 .works_list .banner .icon { color: #fff; font-size: 1.2em; }
 .works_list .banner .icon span { display: block; width: 90px; height: 90px; margin: 0 auto 0.5em; background: url(../images/works_title_icon.png) no-repeat; }
 .works_list .ios .icon span { background-position: -0px 0; }
