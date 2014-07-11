@@ -3,7 +3,7 @@
 /***********************************************************************/
 
 
-body { line-height:1.6; background: #f2f2f2; font-family:'microsoft yahei','stheiti',sans-serif; font-size:1em; color:#333; }
+body { line-height:1.6; font-family:'microsoft yahei','stheiti',sans-serif; font-size:1em; color:#333; }
 input, textarea { font-family:'microsoft yahei','stheiti',sans-serif; }
 a { color: #2a63c1; }
 a:hover { color: #1a4c9f; }
@@ -20,27 +20,51 @@ a:hover { color: #1a4c9f; }
 /***********************************************************************/
 
 
+/*导航*/
+.header { width: 100%; height: 100px; line-height: 100px; position: absolute; left: 0; top: 0; z-index: 9; }
+.header h1 { float: left; padding: 2em 0 0; }
+.header h1 a { display: block; width: 90px; height: 39px; background: url(../images/logo.png) no-repeat center center; }
+.header p { float: right; } 
+.header p a,
+.header p i { color: #fff; } 
+.header p i { padding: 0 1em; } 
+
+
 /*首页区块标题*/
 .index .title { position: relative; }
 .index .title h1 { text-align: center; font-size: 1.8em; font-weight: normal; }
-.index .title span { display: block; text-align: center; font-size: 1em; }
+.index .title span { display: block; text-align: center; font-size: 0.8em; }
 .index .title p { width: 100%; height: 1px; position: absolute; left: 0; top: 1.5em; }
 .index .title p i { display: block; width: 860px; height: 1px; margin: 0 auto; }
 .index .title p i:before { content: ""; float: left; width: 300px; height: 1px; }
 .index .title p i:after { content: ""; float: right; width: 300px; height: 1px; }
+.index .title .intro { margin: 1.5em 0 0; }
+
+
+/*页尾*/
+.footer { height: 130px; line-height: 130px; background: #373c44; }
+.footer p { float: left; } 
+.footer p a,
+.footer p i { color: #fff; } 
+.footer p i { padding: 0 1em; } 
+.footer span { float: right; color: #fff; opacity: .5; } 
 
 
 
 
 
 /***********************************************************************/
-/*                              页面样式                               */
+/*                              首页样式                               */
 /***********************************************************************/
 
-/*首页*/
-.index .banner { padding: 20em 0; background: url(../images/banner_bg.jpg) no-repeat center center; background-size: cover; }
+
+/*首屏*/
+.index .banner { padding: 20em 0; background: url(../images/banner_bg.jpg) no-repeat center top; background-size: cover; }
 .index .banner .text1 { float: left; width: 478px; height: 111px; background: url(../images/banner_text1.png) no-repeat left center; }
 .index .banner .text2 { float: right; width: 274px; height: 21px; margin: 40px 0 0; background: url(../images/banner_text2.png) no-repeat left center; }
+
+
+/*关于*/
 .index .about { display: table; }
 .index .about .avatar { display: table-cell; width: 40%; height: 500px; vertical-align: middle; background: url(../images/about_bg.jpg) no-repeat right center; text-align: center; }
 .index .about .avatar img { height: 60%; margin: 0 40px 0 0; }
@@ -49,7 +73,11 @@ a:hover { color: #1a4c9f; }
 .index .about .text h2 { padding: 0 0 0.5em; font-size: 2em; }
 .index .about .text p { padding: 0 0 1.5em; }
 .index .about .text ol { list-style: decimal inside; }
-.index .experience { margin: 100px 0; background: url(../images/timeline_bg.png) repeat-y center top; position: relative; }
+
+
+/*个人经历*/
+.index .experience { padding: 100px 0; background: #f2f2f2; }
+.index .experience .inner { background: url(../images/timeline_bg.png) repeat-y center top; position: relative; }
 .index .experience h2 { height: 30px; line-height: 30px; background: url(../images/timeline_yeah.png) no-repeat center center; color: #fff; text-align: center; font-size: 0.8em; }
 .index .experience h2.begin { background-image: url(../images/timeline_year2.png); }
 .index .experience .item { height: 14px; margin: 80px 0; background: url(../images/timeline_dot.png) no-repeat center center; }
@@ -69,18 +97,121 @@ a:hover { color: #1a4c9f; }
 .index .experience .odd .content:after { border-left: 10px dashed transparent; border-right: 10px solid #fff; left: -20px; }
 .index .experience .angle { width: 100%; height: 30px; text-align: center; position: absolute; left: 0; bottom: -130px; z-index: 5; }
 .index .experience .angle:after { content: ""; display: inline-block; width: 0; height: 0; overflow: hidden; border-left: 25px dashed transparent; border-right: 25px dashed transparent; border-top: 30px solid #f2f2f2; border-bottom: 30px dashed transparent; }
-.index .works { background: #fff; }
-.index .works .title { padding: 75px 0 115px; }
+
+
+/*我的作品*/
+.index .works { padding: 75px 0 0; background: #fff; }
+.index .works .title { margin: 0 0 115px; }
 .index .works .title h1 { color: #333; }
 .index .works .title span { color: #ccc; }
-.index .works .title p i:before { background: #f2f2f2; }
-.index .works .title p i:after { background: #f2f2f2; }
+.index .works .title p i:before { background: #8a8989; opacity: .15; }
+.index .works .title p i:after { background: #8a8989; opacity: .15; }
 .index .works ul { display: table; width: 100%; background: #eaeaea; }
 .index .works ul li { display: table-cell; width: 33.33%; vertical-align: middle; text-align: center; }
 .index .works ul li a { display: table; width: 100%; }
 .index .works ul li a div { display: table-cell; width: 50%; vertical-align: middle; text-align: center; }
+.index .works ul li a .icon { padding: 100px 0; }
 .index .works ul li a .icon span { display: inline-block; width: 150px; height: 150px; background: url(../images/works_icon.png) no-repeat; }
-.index .works ul li a .text { line-height: 1.2; font-size: 2.6em; color: #fff; }
+.index .works ul li a .text { line-height: 1.2; font-size: 2em; color: #fff; position: relative; }
+.index .works ul li a .text:after { content: ""; display: block; width: 0; height: 0; overflow: hidden; border-top: 20px dashed transparent; border-bottom: 20px dashed transparent; position: absolute; top: 45%; }
+.index .works .odd li a .text:after { border-left: 20px dashed transparent; border-right: 20px solid #333; left: -40px; }
+.index .works .even li a .text:after { border-left: 20px solid #333; border-right: 20px dashed transparent; right: -40px; }
+.index .works ul .ios a .icon span { background-position: -0px 0; }
+.index .works ul .android a .icon span { background-position: -150px 0; }
+.index .works ul .game a .icon span { background-position: -300px 0; }
+.index .works ul .web a .icon span { background-position: -450px 0; }
+.index .works ul .arts a .icon span { background-position: -600px 0; }
+.index .works ul .graphic a .icon span { background-position: -750px 0; }
+.index .works ul .ios a .text { background: #c4722f; }
+.index .works ul .android a .text { background: #29b66b; }
+.index .works ul .game a .text { background: #299ab6; }
+.index .works ul .web a .text { background: #8629b6; }
+.index .works ul .arts a .text { background: #2965b6; }
+.index .works ul .graphic a .text { background: #b6295b; }
+.index .works ul .ios a .text:after { border-right: 20px solid #c4722f; }
+.index .works ul .android a .text:after { border-right: 20px solid #29b66b; }
+.index .works ul .game a .text:after { border-right: 20px solid #299ab6; }
+.index .works ul .web a .text:after { border-left: 20px solid #8629b6; }
+.index .works ul .arts a .text:after { border-left: 20px solid #2965b6; }
+.index .works ul .graphic a .text:after { border-left: 20px solid #b6295b; }
+
+
+/*技能*/
+.index .skills { padding: 5em 0 8em; background: url(../images/skills_bg.jpg) no-repeat center top; background-size: cover; }
+.index .skills .title h1 { color: #fff; }
+.index .skills .title span { color: #fff; opacity: .85; }
+.index .skills .title p i:before { background: #fff; opacity: .15; }
+.index .skills .title p i:after { background: #fff; opacity: .15; }
+.index .skills .title .intro { text-align: center; color: #fff; }
+.index .skills ul { width: 100%; margin: 5em auto 0; }
+.index .skills li { float: left; width: 20%; text-align: center; color: #fff; }
+.index .skills li span { display: block; width: 200px; height: 200px; margin: 0 auto 2.4em; background: url(../images/skills_icon.png) no-repeat; }
+.index .skills .ps span { background-position: -0px 0; }
+.index .skills .ai span { background-position: -200px 0; }
+.index .skills .fl span { background-position: -400px 0; }
+.index .skills .learn span { background-position: -600px 0; }
+.index .skills .team span { background-position: -800px 0; }
+
+
+/*联系我*/
+.index .contact { padding: 5em 0 8em; background: #e6e6e6; }
+.index .contact .title h1 { color: #333; }
+.index .contact .title span { color: #ccc; }
+.index .contact .title p i:before { background: #8a8989; opacity: .15; }
+.index .contact .title p i:after { background: #8a8989; opacity: .15; }
+.index .contact .title .intro { text-align: center; }
+.index .contact ul { width: 340px; margin: 2em auto; }
+.index .contact li { height: 64px; line-height: 64px; margin: 1em 0; }
+.index .contact li a { display: block; width: 100%; height: 100%; padding: 0 20px; }
+.index .contact li i { float: left; width: 64px; height: 64px; background: url(../images/btn_contact_icon.png) no-repeat; }
+.index .contact li span { float: left; padding: 0 0 0 1em; font-size: 1.2em; color: #333; }
+.index .contact li a:hover span { color: #1a4c9f; }
+.index .contact .qq i { background-position: -0px -64px; }
+.index .contact .qq a:hover i { background-position: -0px -0px; }
+.index .contact .email i { background-position: -64px -64px; }
+.index .contact .email a:hover i { background-position: -64px -0px; }
+.index .contact .weibo i { background-position: -128px -64px; }
+.index .contact .weibo a:hover i { background-position: -128px -0px; }
+
+
+
+
+
+/***********************************************************************/
+/*                              作品页面                               */
+/***********************************************************************/
+
+
+/*首屏*/
+.works_list { background: #363636; }
+.works_list .banner { padding: 8em 0 4em; background: url(../images/skills_bg.jpg) no-repeat center top; background-size: cover; text-align: center; position: relative; }
+.works_list .banner .icon { color: #fff; font-size: 1.2em; }
+.works_list .banner .icon span { display: block; width: 90px; height: 90px; margin: 0 auto 0.5em; background: url(../images/works_title_icon.png) no-repeat; }
+.works_list .ios .icon span { background-position: -0px 0; }
+.works_list .android .icon span { background-position: -90px 0; }
+.works_list .game .icon span { background-position: -180px 0; }
+.works_list .web .icon span { background-position: -270px 0; }
+.works_list .arts .icon span { background-position: -360px 0; }
+.works_list .graphic .icon span { background-position: -450px 0; }
+.works_list .banner .angle { width: 100%; height: 20px; text-align: center; position: absolute; left: 0; bottom: 0; }
+.works_list .banner .angle:after { content: ""; display: inline-block; width: 0; height: 0; overflow: hidden; border-left: 15px dashed transparent; border-right: 15px dashed transparent; border-top: 10px dashed transparent; border-bottom: 10px solid #363636; }
+
+/*作品列表*/
+.works_list .list { padding: 5em 0; }
+.works_list .list li { float: left; padding: 5px; }
+.works_list .list li .pic_center { width:230px; height:230px; }
+
+
+
+
+
+/***********************************************************************/
+/*                             浏览器提示                              */
+/***********************************************************************/
+
+
+.bg { background: url(../images/banner_bg.jpg) no-repeat center top; }
+.explorer { padding: 10em 0 2em; background: url(../images/banner_text2.png) no-repeat center bottom; font-size: 2.4em; color: #fff; text-align: center; }
 
 
 
@@ -89,6 +220,20 @@ a:hover { color: #1a4c9f; }
 /***********************************************************************/
 /*                              动画效果                               */
 /***********************************************************************/
+
+
+
+
+
+/***********************************************************************/
+/*                              基础功能                               */
+/***********************************************************************/
+
+
+/*居中截取图片*/
+.pic_center { display:block; overflow:hidden; position:relative; }
+.pic_center img { position:relative; }
+
 
 
 
