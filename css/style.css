@@ -21,8 +21,8 @@ a:hover { color: #1a4c9f; }
 
 
 /*导航*/
-.header { width: 100%; height: 100px; line-height: 100px; position: absolute; left: 0; top: 0; z-index: 9; }
-.header h1 { float: left; padding: 2em 0 0; }
+.header { width: 100%; height: 80px; line-height: 80px; position: absolute; left: 0; top: 0; z-index: 9; }
+.header h1 { float: left; padding: 1em 0 0; }
 .header h1 a { display: block; width: 90px; height: 39px; background: url(../images/logo.png) no-repeat center center; }
 .header p { float: right; } 
 .header p a,
@@ -59,7 +59,9 @@ a:hover { color: #1a4c9f; }
 
 
 /*首屏*/
-.index .banner { padding: 20em 0; background: url(../images/banner_bg.jpg) no-repeat center top fixed; background-size: cover; }
+.index .header { position: fixed; }
+.index .banner { background: #333; overflow: hidden; }
+.index .banner .inner { padding: 20em 0; background: url(../images/banner_bg.jpg) no-repeat center top; background-size: cover; }
 .index .banner .text1 { float: left; width: 478px; height: 111px; background: url(../images/banner_text1.png) no-repeat left center; }
 .index .banner .text2 { float: right; width: 274px; height: 21px; margin: 40px 0 0; background: url(../images/banner_text2.png) no-repeat left center; }
 
@@ -106,13 +108,13 @@ a:hover { color: #1a4c9f; }
 .index .works .title span { color: #ccc; }
 .index .works .title p i:before { background: #8a8989; opacity: .15; }
 .index .works .title p i:after { background: #8a8989; opacity: .15; }
-.index .works ul { display: table; width: 100%; background: #eaeaea; }
-.index .works ul li { display: table-cell; width: 33.33%; vertical-align: middle; text-align: center; }
-.index .works ul li a { display: table; width: 100%;
+.index .works ul { display: table; width: 100%; }
+.index .works ul li { display: table-cell; width: 33.33%; vertical-align: middle; background: #333; text-align: center; }
+.index .works ul li a { display: table; width: 100%; background: #eaeaea;
 	transition: opacity .3s ease-in;
 	-webkit-transition: opacity .3s ease-in;
 }
-.index .works ul li a:hover { opacity: .7; }
+.index .works ul li a:hover { opacity: .85; }
 .index .works ul li a div { display: table-cell; width: 50%; vertical-align: middle; text-align: center; }
 .index .works ul li a .icon { padding: 100px 0; }
 .index .works ul li a .icon span { display: inline-block; width: 150px; height: 150px; background: url(../images/works_icon.png) no-repeat; }
@@ -141,7 +143,8 @@ a:hover { color: #1a4c9f; }
 
 
 /*技能*/
-.index .skills { padding: 5em 0 8em; background: url(../images/skills_bg.jpg) no-repeat center top fixed; background-size: cover; }
+.index .skills { overflow: hidden; background: #333; }
+.index .skills .inner { padding: 5em 0 8em; background: url(../images/skills_bg.jpg) no-repeat center top; background-size: cover; }
 .index .skills .title h1 { color: #fff; }
 .index .skills .title span { color: #fff; opacity: .85; }
 .index .skills .title p i:before { background: #fff; opacity: .15; }

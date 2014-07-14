@@ -2,6 +2,7 @@ $(function () {
 
 	// 页面效果
 	experience();  //首页个人经历时间轴
+	parallax();  //首页视觉差滚动
 
 	// 基础功能
 	anchorSlide();  //锚链接平滑移动
@@ -30,6 +31,95 @@ function experience () {
 }
 
 
+// 首页视觉差滚动
+function parallax () {
+	if ($(".index").length > 0) {
+		$(window).load(function () {
+			setScrolling();
+		}).scroll(function () {
+			setScrolling();
+		}).resize(function () {
+			setScrolling();
+		})
+		function setScrolling () {
+			var headerHeight = 80;
+			var wHeight = $(window).height();
+			var distanceTop = $(window).scrollTop();
+			var areaHeight, areaOffset;
+			$(".header").css({"background":"rgba(51,51,51," + distanceTop/($(".banner").height() - headerHeight) + ")"});
+			// 首屏部分
+			if (distanceTop <= $(".banner").height()) {
+				areaHeight = $(".banner").height();
+				$(".banner .inner").css({
+					"transform":"translate(0," + 0.8*distanceTop + "px)",
+					"-webkit-transform":"translate(0," + 0.8*distanceTop + "px)",
+					"opacity":(1 - (distanceTop/(areaHeight - headerHeight)))
+				});
+			};
+			// 关于
+			if (distanceTop >= $(".about").offset().top - wHeight && distanceTop <= $(".about").offset().top - wHeight + $(".about").height()) {
+				areaHeight = $(".about").height();
+				areaOffset = $(".about").offset().top;
+				$(".about .avatar img").css({
+					"transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
+					"-webkit-transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
+					"opacity":(distanceTop - areaOffset + wHeight)/areaHeight
+				})
+				$(".about .text .inner").css({
+					"transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
+					"-webkit-transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
+					"opacity":(distanceTop - areaOffset + wHeight)/areaHeight
+				})
+			};
+			// 技能
+			if (distanceTop >= $(".contact").offset().top - wHeight && distanceTop <= $(".contact").offset().top - headerHeight) {
+				areaOffset = $(".contact").offset().top;
+				$(".skills .inner").css({
+					"transform":"translate(0," + 0.8*(distanceTop - areaOffset + wHeight) + "px)",
+					"-webkit-transform":"translate(0," + 0.8*(distanceTop - areaOffset + wHeight) + "px)",
+					"opacity":(1 - (distanceTop - areaOffset + wHeight)/(wHeight - headerHeight))
+				});
+			}
+			else {
+				$(".skills .inner").css({
+					"transform":"translate(0,0)",
+					"-webkit-transform":"translate(0,0)",
+					"opacity":1
+				});
+			}
+			if (distanceTop >= $(".skills ul").offset().top - wHeight && distanceTop <= $(".skills ul").offset().top - wHeight + $(".skills ul").height()) {
+				areaHeight = $(".skills ul").height()
+				areaOffset = $(".skills ul").offset().top;
+				var maxDivision = $(".skills li").length + 2;
+				var percentage = (distanceTop - areaOffset + wHeight)/areaHeight;
+				$(".skills li").each(function (index) {
+					if (percentage >= index/maxDivision && percentage <= (index + 1 + 2)/maxDivision) {
+						$(this).css({
+							"transform":"scale(" + (percentage - index/maxDivision)/(1 + 2)*maxDivision + "," + (percentage - index/maxDivision)/(1 + 2)*maxDivision + ")"
+						})
+					}
+					else if (percentage < index/maxDivision) {
+						$(this).css({
+							"transform":"scale(0,0)"
+						})
+					}
+					else {
+						$(this).css({
+							"transform":"scale(1,1)"
+						})
+					}
+				})
+			}
+			else {
+				$(".skills li").css({
+					"transform":"scale(1,1)"
+				})
+			}
+		}
+	};
+}
+
+
 
 
 
@@ -40,6 +130,7 @@ function experience () {
 
 // 锚链接平滑移动
 function anchorSlide () {
+	var scrollSpeed = 1000;
 	$("a[href*='#']").click(function() {
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			var $target = $(this.hash);
@@ -47,17 +138,25 @@ function anchorSlide () {
 			if (this.hash.slice(1)){
 				if($target.length){
 					var targetOffset = $target.offset().top;
-					$("html,body").animate({
-						scrollTop: targetOffset
-					},
-					300);
+					if ($(".index").length > 0) {
+						$("html,body").animate({
+							scrollTop: targetOffset - $(".header").height()
+						},
+						scrollSpeed);
+					}
+					else {
+						$("html,body").animate({
+							scrollTop: targetOffset
+						},
+						scrollSpeed);
+					}
 				}
 			}
 			else{
 				$("html,body").animate({
 					scrollTop: 0
 				},
-				300);
+				scrollSpeed);
 			}
 			return false;  //防止页面跳动
 		}
