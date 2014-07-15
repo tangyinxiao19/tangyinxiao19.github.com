@@ -7,6 +7,7 @@ $(function () {
 	// 基础功能
 	anchorSlide();  //锚链接平滑移动
 	picCenter();  //居中截取图片
+	lightWave();  //鼠标点击光晕扩散
 
 	// 插件效果
 	fancybox();  //fancybox弹窗相册
@@ -34,6 +35,7 @@ function experience () {
 // 首页视觉差滚动
 function parallax () {
 	if ($(".index").length > 0) {
+		var flag = 0;
 		$(window).load(function () {
 			setScrolling();
 		}).scroll(function () {
@@ -47,7 +49,7 @@ function parallax () {
 			var distanceTop = $(window).scrollTop();
 			var areaHeight, areaOffset;
 			$(".header").css({"background":"rgba(51,51,51," + distanceTop/($(".banner").height() - headerHeight) + ")"});
-			// 首屏部分
+			// 首屏
 			if (distanceTop <= $(".banner").height()) {
 				areaHeight = $(".banner").height();
 				$(".banner .inner").css({
@@ -57,22 +59,35 @@ function parallax () {
 				});
 			};
 			// 关于
-			if (distanceTop >= $(".about").offset().top - wHeight && distanceTop <= $(".about").offset().top - wHeight + $(".about").height()) {
-				areaHeight = $(".about").height();
-				areaOffset = $(".about").offset().top;
+			if (distanceTop >= $(".about").offset().top - wHeight + $(".about").height()*0.5) {
 				$(".about .avatar img").css({
-					"transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
-					"-webkit-transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
-					"opacity":(distanceTop - areaOffset + wHeight)/areaHeight
+					"animation":"movein_right .3s ease-out both",
+					"-webkit-animation":"movein_right .3s ease-out both"
 				})
-				$(".about .text .inner").css({
-					"transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
-					"-webkit-transform":"translate(0," + (-150)*(areaHeight - distanceTop + areaOffset - wHeight)/areaHeight + "px)",
-					"opacity":(distanceTop - areaOffset + wHeight)/areaHeight
+				$(".about .text .inner h2").css({
+					"animation":"movein_left .3s ease-out .2s both",
+					"-webkit-animation":"movein_left .3s ease-out .2s both"
+				})
+				$(".about .text .inner p").css({
+					"animation":"movein_left .3s ease-out .3s both",
+					"-webkit-animation":"movein_left .3s ease-out .3s both"
+				})
+				$(".about .text .inner ol").css({
+					"animation":"movein_left .3s ease-out .4s both",
+					"-webkit-animation":"movein_left .3s ease-out .4s both"
+				})
+			};
+			// 个人经历
+			if (distanceTop >= $(".experience").offset().top - wHeight + $(".experience").height()*0.2) {
+				$(".experience .item").each(function (index) {
+					$(this).css({
+						"animation":"zoomin .5s ease-in-out " + index*0.1 + "s both",
+						"-webkit-animation":"zoomin .3s ease-in-out " + index*0.1 + "s both"
+					})
 				})
 			};
 			// 技能
-			if (distanceTop >= $(".contact").offset().top - wHeight && distanceTop <= $(".contact").offset().top - headerHeight) {
+			if (distanceTop >= $(".skills").offset().top + $(".skills").height() - wHeight && distanceTop <= $(".skills").offset().top + $(".skills").height() - headerHeight) {
 				areaOffset = $(".contact").offset().top;
 				$(".skills .inner").css({
 					"transform":"translate(0," + 0.8*(distanceTop - areaOffset + wHeight) + "px)",
@@ -87,35 +102,46 @@ function parallax () {
 					"opacity":1
 				});
 			}
-			if (distanceTop >= $(".skills ul").offset().top - wHeight && distanceTop <= $(".skills ul").offset().top - wHeight + $(".skills ul").height()) {
-				areaHeight = $(".skills ul").height()
-				areaOffset = $(".skills ul").offset().top;
-				var maxDivision = $(".skills li").length + 2;
-				var percentage = (distanceTop - areaOffset + wHeight)/areaHeight;
-				$(".skills li").each(function (index) {
-					if (percentage >= index/maxDivision && percentage <= (index + 1 + 2)/maxDivision) {
+			if (distanceTop >= $(".skills ul").offset().top - wHeight && distanceTop < $(".skills").offset().top + $(".skills").height() - wHeight*0.8) {
+				if (!flag) {
+					$(".skills li span").each(function (index) {
 						$(this).css({
-							"transform":"scale(" + (percentage - index/maxDivision)/(1 + 2)*maxDivision + "," + (percentage - index/maxDivision)/(1 + 2)*maxDivision + ")"
+							"animation":"zoomin .3s ease-in-out " + index*0.1 + "s both",
+							"-webkit-animation":"zoomin .3s ease-in-out " + index*0.1 + "s both"
 						})
-					}
-					else if (percentage < index/maxDivision) {
-						$(this).css({
-							"transform":"scale(0,0)"
-						})
-					}
-					else {
-						$(this).css({
-							"transform":"scale(1,1)"
-						})
-					}
-				})
+					})
+					flag = 1;
+				};
 			}
-			else {
-				$(".skills li").css({
-					"transform":"scale(1,1)"
-				})
-			}
+			if (distanceTop >= $(".skills").offset().top + $(".skills").height() - wHeight*0.8) {
+				if (flag) {
+					$(".skills li span").each(function (index) {
+						$(this).css({
+							"animation":"zoomout .3s ease-in-out " + index*0.1 + "s both",
+							"-webkit-animation":"zoomout .3s ease-in-out " + index*0.1 + "s both"
+						})
+					})
+					flag = 0;
+				};
+			};
 		}
+	};
+}
+
+
+// 鼠标点击光晕扩散
+function lightWave () {
+	if ($(".lightglow").length > 0) {
+		$(".lightglow").click(function (e) {
+			var mouseX = e.pageX, mouseY = e.pageY;
+			var wrapper = $(this).find("svg");
+			var light = $(this).find("svg ellipse");
+			light.attr({"cx":mouseX - wrapper.offset().left,"cy":mouseY - wrapper.offset().top});
+			light.css({"fill":"#fff","transform":"scale(50,50)","-webkit-transform":"scale(50,50)","opacity":0});
+			var reset = setTimeout(function () {
+				light.removeAttr("style");
+			},500);
+		})
 	};
 }
 
