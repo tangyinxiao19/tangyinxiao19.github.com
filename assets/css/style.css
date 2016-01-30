@@ -310,7 +310,7 @@ input, textarea {
 .index .intro .content {
 	line-height: 1.3;
 	padding: 80px;
-	font-size: 26px;
+	font-size: 18px;
 }
 .index .intro .row {
 	padding: 0 0 15px;
@@ -318,11 +318,11 @@ input, textarea {
 .index .intro .row span {
 	float: left;
 	display: inline-block;
-	width: 100px;
+	width: 80px;
 	color: #ff756b;
 }
 .index .intro .row p {
-	margin: 0 0 0 100px;
+	margin: 0 0 0 80px;
 	color: #656565;
 }
 .index .intro .avatar {
@@ -365,6 +365,25 @@ input, textarea {
 .index .skills {
 	padding: 110px 0 0;
 }
+.index .skills ul {
+	width: 1160px;
+	margin: 0 auto;
+}
+.index .skills li {
+	float: left;
+	width: 290px;
+	position: relative;
+	text-align: center;
+}
+.index .skills .item {
+	width: 186px;
+	margin: 0 auto;
+}
+.index .skills .circle_progress .text { line-height: 176px; text-align: center; font-size: 88px; font-family: verdana, sans-serif; }
+.index .skills li:nth-child(1) .circle_progress { background: #86d592; }
+.index .skills li:nth-child(1) .circle_progress .pie_left,
+.index .skills li:nth-child(1) .circle_progress .pie_right { background: #ebf2ec; }
+.index .skills li:nth-child(1) { color: #86d592; }
 
 
 /*经历*/
@@ -435,6 +454,10 @@ a {
 }
 @-webkit-keyframes hang
 {
+	0%	{ -webkit-transform:translate(0,-80px); }
+	45%{ -webkit-transform:translate(0,3px); }
+	80%{ -webkit-transform:translate(0,-2px); }
+	100%{ -webkit-transform:translate(0,0); }
 }
 
 
@@ -448,3 +471,22 @@ a {
 /***********************************************************************/
 
 
+/* circle progress style */
+.circle_progress { width: 186px; height: 186px; border-radius: 50%; position: relative; }
+.circle_progress .pie_left_wrap,
+.circle_progress .pie_left,
+.circle_progress .pie_right_wrap,
+.circle_progress .pie_right { display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; }
+.circle_progress .pie_left_wrap,
+.circle_progress .pie_left { clip: rect(auto,100px,auto,auto); }
+.circle_progress .pie_right_wrap,
+.circle_progress .pie_right { clip: rect(auto,auto,auto,100px); }
+.circle_progress .pie_left,
+.circle_progress .pie_right { border-radius: 50%;
+	transition: transform 0.5s linear;
+	-webkit-transition: -webkit-transform 0.5s linear;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+}
+.circle_progress .center { width: 176px; height: 176px; background: #fff; border-radius: 50%; position: absolute; left: 5px; top: 5px; }
+.circle_progress .center span { display: none; }
