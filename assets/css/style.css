@@ -112,11 +112,10 @@ input, textarea {
 	width: 100%;
 	position: absolute;
 	left: 0;
-	top: 635px;
+	top: 640px;
 	z-index: 5;
 }
 .mainnav .wrap {
-	width: 837px;
 	height: 152px;
 	margin: 0 auto;
 	background: #fff;
@@ -125,7 +124,6 @@ input, textarea {
 	text-align: center;
 }
 .mainnav nav {
-	width: 585px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -188,6 +186,12 @@ input, textarea {
 .mainnav li.current a:before {
 	opacity: 1;
 }
+.mainnav .about {
+	width: 837px;
+}
+.mainnav .about nav {
+	width: 585px;
+}
 .mainnav .about li:nth-child(1) a:before {
 	background-image: url(../images/main_nav_icon1@2x.png);
 	background-size: 92px 85px;
@@ -204,20 +208,26 @@ input, textarea {
 	background-image: url(../images/main_nav_icon4@2x.png);
 	background-size: 98px 83px;
 }
-.mainnav .about li:nth-child(1):hover,
-.mainnav .about li:nth-child(1).current {
+.mainnav .works {
+	width: 1129px;
+}
+.mainnav .works nav {
+	width: 877px;
+}
+.mainnav li:nth-child(1):hover,
+.mainnav li:nth-child(1).current {
 	background: url(../images/mainnav_pattern1.jpg) repeat;
 }
-.mainnav .about li:nth-child(2):hover,
-.mainnav .about li:nth-child(2).current {
+.mainnav li:nth-child(2):hover,
+.mainnav li:nth-child(2).current {
 	background: url(../images/mainnav_pattern2.jpg) repeat;
 }
-.mainnav .about li:nth-child(3):hover,
-.mainnav .about li:nth-child(3).current {
+.mainnav li:nth-child(3):hover,
+.mainnav li:nth-child(3).current {
 	background: url(../images/mainnav_pattern3.jpg) repeat;
 }
-.mainnav .about li:nth-child(4):hover,
-.mainnav .about li:nth-child(4).current {
+.mainnav li:nth-child(4):hover,
+.mainnav li:nth-child(4).current {
 	background: url(../images/mainnav_pattern4.jpg) repeat;
 }
 
@@ -280,10 +290,10 @@ input, textarea {
 }
 .school .hero .right i {
 	width: 507px;
-	height: 417px;
+	height: 483px;
 	background-image: url(../images/hero2_right@2x.png);
 	left: 55%;
-	top: 60.3%;
+	top: 54%;
 }
 .intern .hero .left i {
 	width: 643px;
@@ -293,11 +303,39 @@ input, textarea {
 	top: 53%;
 }
 .intern .hero .right i {
-	width: 527px;
-	height: 455px;
+	width: 481px;
+	height: 406px;
 	background-image: url(../images/hero3_right@2x.png);
 	left: 57%;
-	top: 60.3%;
+	top: 55%;
+}
+.job .hero .left i {
+	width: 633px;
+	height: 507px;
+	background-image: url(../images/hero4_left@2x.png);
+	left: 48%;
+	top: 53%;
+}
+.job .hero .right i {
+	width: 482px;
+	height: 522px;
+	background-image: url(../images/hero4_right@2x.png);
+	left: 55%;
+	top: 61%;
+}
+.gallary .hero .left i {
+	width: 496px;
+	height: 401px;
+	background-image: url(../images/hero1_left@2x.png);
+	left: 60%;
+	top: 48%;
+}
+.gallary .hero .right i {
+	width: 518px;
+	height: 327px;
+	background-image: url(../images/hero1_right@2x.png);
+	left: 55%;
+	top: 45%;
 }
 
 
@@ -728,6 +766,11 @@ input, textarea {
 	margin: 10px;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.25);
 }
+.gallary .list li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 .gallary .list i {
 	display: block;
 	width: 16px;
@@ -829,9 +872,9 @@ a {
 .circle_progress .pie_right_wrap,
 .circle_progress .pie_right { display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; }
 .circle_progress .pie_left_wrap,
-.circle_progress .pie_left { clip: rect(auto,100px,auto,auto); }
+.circle_progress .pie_left { clip: rect(auto,93px,auto,auto); }
 .circle_progress .pie_right_wrap,
-.circle_progress .pie_right { clip: rect(auto,auto,auto,100px); }
+.circle_progress .pie_right { clip: rect(auto,auto,auto,93px); }
 .circle_progress .pie_left,
 .circle_progress .pie_right { border-radius: 50%; background: #fff;
 	transition: transform 0.5s linear;
