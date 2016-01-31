@@ -846,3 +846,8 @@ a {
 /*tab switch*/
 .tab_switch_fade .switch_tab { display: none; }
 .tab_switch_fade .current_tab { display: block; }
+
+
+/*picture centrical crop*/
+.pic_center { display:block; overflow:hidden; position:relative; }
+.pic_center img { position:relative; }
