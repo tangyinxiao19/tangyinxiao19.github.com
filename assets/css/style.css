@@ -900,5 +900,5 @@ a {
 
 
 /*picture centrical crop*/
-.pic_center { display:block; overflow:hidden; position:relative; }
-.pic_center img { position:relative; }
+.pic_center { display:block; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+.pic_center img { display: none; }

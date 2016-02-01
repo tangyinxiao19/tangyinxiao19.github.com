@@ -1,9 +1,5 @@
 $(function () {
 
-	// 页面效果
-	// experience();  //首页个人经历时间轴
-
-	// 插件效果
 	tabSwitch();  //tab切换
 	circleProgress();  //环形进度条
 	fancybox();  //fancybox弹窗相册
@@ -12,25 +8,6 @@ $(function () {
 })
 
 
-
-
-
-//*********************************************************************//
-//                              页面效果                               //
-//*********************************************************************//
-
-
-// 首页个人经历时间轴
-function experience () {
-}
-
-
-
-
-
-//*********************************************************************//
-//                              插件效果                               //
-//*********************************************************************//
 
 
 // tab切换
@@ -144,42 +121,11 @@ function fancybox () {
 
 // 图片居中剪裁
 function picCenter () {
-	function setImg(obj){
-		var wrapWidth = $(obj).width();
-		var wrapHeight = $(obj).height();
-		var picWidth = $(obj).find("img").width();
-		var picHeight = $(obj).find("img").height();
-		var wrapShape = wrapWidth / wrapHeight;
-		var picShape = picWidth / picHeight;
-		var picWidthS = picWidth/picHeight*wrapHeight;
-		var picHeightS = picHeight/picWidth*wrapWidth;
-		if(wrapShape > picShape)
-		{
-			$(obj).find("img").css({"width":"100%","height":"auto","top":(wrapHeight-picHeightS)/2,"left":"0"});
-		}
-		else
-		{
-			$(obj).find("img").css({"width":"auto","height":"100%","left":(wrapWidth-picWidthS)/2,"top":"0"});
-		}
-	}
-	function setAllCenter(){
-		$(".pic_center").each(function(){
-			var self = this;
-			var pic = $(self).find("img");
-			var src = $(this).attr("src");
-			$(pic).hide();
-			var imgW,imgH;
-			var img = new Image();
-			$(img).bind("load", function() {
-				imgW = pic.width();
-				imgH = pic.height();
-				setImg(self);
-			}).attr("src", pic.attr("src"));
-			pic.show()
-		});
-	}
 	if($(".pic_center").length > 0)
 	{
-		setAllCenter();
+		$(".pic_center").each(function(){
+			var src = $(this).find("img").attr("src");
+			$(this).css("background-image","url(" + src + ")");
+		});
 	}
 }
