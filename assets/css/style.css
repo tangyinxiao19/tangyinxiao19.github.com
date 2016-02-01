@@ -271,7 +271,7 @@ input, textarea {
 	width: 496px;
 	height: 401px;
 	background-image: url(../images/hero1_left@2x.png);
-	left: 60%;
+	left: 65%;
 	top: 48%;
 }
 .index .hero .right i {
@@ -318,10 +318,10 @@ input, textarea {
 }
 .job .hero .right i {
 	width: 482px;
-	height: 522px;
+	height: 465px;
 	background-image: url(../images/hero4_right@2x.png);
 	left: 55%;
-	top: 61%;
+	top: 55.8%;
 }
 .gallary .hero .left i {
 	width: 496px;
