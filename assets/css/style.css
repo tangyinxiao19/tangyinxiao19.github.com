@@ -230,6 +230,14 @@ input, textarea {
 .mainnav li:nth-child(4).current {
 	background: url(../images/mainnav_pattern4.jpg) repeat;
 }
+.mainnav li:nth-child(5):hover,
+.mainnav li:nth-child(5).current {
+	background: url(../images/mainnav_pattern5.jpg) repeat;
+}
+.mainnav li:nth-child(6):hover,
+.mainnav li:nth-child(6).current {
+	background: url(../images/mainnav_pattern6.jpg) repeat;
+}
 
 
 /*插画*/
@@ -269,10 +277,10 @@ input, textarea {
 }
 .index .hero .left i {
 	width: 496px;
-	height: 401px;
+	height: 469px;
 	background-image: url(../images/hero1_left@2x.png);
-	left: 65%;
-	top: 48%;
+	left: 55%;
+	top: 55.5%;
 }
 .index .hero .right i {
 	width: 518px;
@@ -314,7 +322,7 @@ input, textarea {
 	height: 507px;
 	background-image: url(../images/hero4_left@2x.png);
 	left: 48%;
-	top: 53%;
+	top: 51%;
 }
 .job .hero .right i {
 	width: 482px;
