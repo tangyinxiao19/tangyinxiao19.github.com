@@ -193,20 +193,36 @@ input, textarea {
 	width: 585px;
 }
 .mainnav .about li:nth-child(1) a:before {
-	background-image: url(../images/main_nav_icon1@2x.png);
+	background-image: url(../images/mainnav_about_icon1@2x.png);
 	background-size: 92px 85px;
 }
 .mainnav .about li:nth-child(2) a:before {
-	background-image: url(../images/main_nav_icon2@2x.png);
+	background-image: url(../images/mainnav_about_icon2@2x.png);
 	background-size: 90px 81px;
 }
 .mainnav .about li:nth-child(3) a:before {
-	background-image: url(../images/main_nav_icon3@2x.png);
+	background-image: url(../images/mainnav_about_icon3@2x.png);
 	background-size: 98px 82px;
 }
 .mainnav .about li:nth-child(4) a:before {
-	background-image: url(../images/main_nav_icon4@2x.png);
+	background-image: url(../images/mainnav_about_icon4@2x.png);
 	background-size: 98px 83px;
+}
+.mainnav .about li:nth-child(1):hover,
+.mainnav .about li:nth-child(1).current {
+	background: url(../images/mainnav_about_pattern1.jpg) repeat;
+}
+.mainnav .about li:nth-child(2):hover,
+.mainnav .about li:nth-child(2).current {
+	background: url(../images/mainnav_about_pattern2.jpg) repeat;
+}
+.mainnav .about li:nth-child(3):hover,
+.mainnav .about li:nth-child(3).current {
+	background: url(../images/mainnav_about_pattern3.jpg) repeat;
+}
+.mainnav .about li:nth-child(4):hover,
+.mainnav .about li:nth-child(4).current {
+	background: url(../images/mainnav_about_pattern4.jpg) repeat;
 }
 .mainnav .works {
 	width: 1129px;
@@ -214,29 +230,53 @@ input, textarea {
 .mainnav .works nav {
 	width: 877px;
 }
-.mainnav li:nth-child(1):hover,
-.mainnav li:nth-child(1).current {
-	background: url(../images/mainnav_pattern1.jpg) repeat;
+.mainnav .works li:nth-child(1) a:before {
+	background-image: url(../images/mainnav_works_icon1@2x.png);
+	background-size: 52px 84px;
 }
-.mainnav li:nth-child(2):hover,
-.mainnav li:nth-child(2).current {
-	background: url(../images/mainnav_pattern2.jpg) repeat;
+.mainnav .works li:nth-child(2) a:before {
+	background-image: url(../images/mainnav_works_icon2@2x.png);
+	background-size: 66px 80px;
 }
-.mainnav li:nth-child(3):hover,
-.mainnav li:nth-child(3).current {
-	background: url(../images/mainnav_pattern3.jpg) repeat;
+.mainnav .works li:nth-child(3) a:before {
+	background-image: url(../images/mainnav_works_icon3@2x.png);
+	background-size: 68px 75px;
 }
-.mainnav li:nth-child(4):hover,
-.mainnav li:nth-child(4).current {
-	background: url(../images/mainnav_pattern4.jpg) repeat;
+.mainnav .works li:nth-child(4) a:before {
+	background-image: url(../images/mainnav_works_icon4@2x.png);
+	background-size: 81px 56px;
 }
-.mainnav li:nth-child(5):hover,
-.mainnav li:nth-child(5).current {
-	background: url(../images/mainnav_pattern5.jpg) repeat;
+.mainnav .works li:nth-child(5) a:before {
+	background-image: url(../images/mainnav_works_icon5@2x.png);
+	background-size: 54px 73px;
 }
-.mainnav li:nth-child(6):hover,
-.mainnav li:nth-child(6).current {
-	background: url(../images/mainnav_pattern6.jpg) repeat;
+.mainnav .works li:nth-child(6) a:before {
+	background-image: url(../images/mainnav_works_icon6@2x.png);
+	background-size: 67px 64px;
+}
+.mainnav .works li:nth-child(1):hover,
+.mainnav .works li:nth-child(1).current {
+	background: url(../images/mainnav_works_pattern1.jpg) repeat;
+}
+.mainnav .works li:nth-child(2):hover,
+.mainnav .works li:nth-child(2).current {
+	background: url(../images/mainnav_works_pattern2.jpg) repeat;
+}
+.mainnav .works li:nth-child(3):hover,
+.mainnav .works li:nth-child(3).current {
+	background: url(../images/mainnav_works_pattern3.jpg) repeat;
+}
+.mainnav .works li:nth-child(4):hover,
+.mainnav .works li:nth-child(4).current {
+	background: url(../images/mainnav_works_pattern4.jpg) repeat;
+}
+.mainnav .works li:nth-child(5):hover,
+.mainnav .works li:nth-child(5).current {
+	background: url(../images/mainnav_works_pattern5.jpg) repeat;
+}
+.mainnav .works li:nth-child(6):hover,
+.mainnav .works li:nth-child(6).current {
+	background: url(../images/mainnav_works_pattern6.jpg) repeat;
 }
 
 
@@ -332,18 +372,18 @@ input, textarea {
 	top: 55.8%;
 }
 .gallary .hero .left i {
-	width: 496px;
-	height: 401px;
-	background-image: url(../images/hero1_left@2x.png);
+	width: 423px;
+	height: 380px;
+	background-image: url(../images/hero5_left@2x.png);
 	left: 60%;
-	top: 48%;
+	top: 54%;
 }
 .gallary .hero .right i {
-	width: 518px;
-	height: 327px;
-	background-image: url(../images/hero1_right@2x.png);
+	width: 457px;
+	height: 443px;
+	background-image: url(../images/hero5_right@2x.png);
 	left: 55%;
-	top: 45%;
+	top: 57.8%;
 }
 
 
