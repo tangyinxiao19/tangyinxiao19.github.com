@@ -291,8 +291,8 @@ input, textarea {
 	background-position: center center;
 	background-size: contain;
 	position: absolute;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
 }
 .hero .left {
 	float: left;
@@ -319,70 +319,70 @@ input, textarea {
 	width: 496px;
 	height: 469px;
 	background-image: url(../images/hero1_left@2x.png);
-	left: 55%;
+	right: 50px;
 	top: 55.5%;
 }
 .index .hero .right i {
 	width: 518px;
 	height: 327px;
 	background-image: url(../images/hero1_right@2x.png);
-	left: 55%;
+	left: 100px;
 	top: 45%;
 }
 .school .hero .left i {
 	width: 520px;
 	height: 472px;
 	background-image: url(../images/hero2_left@2x.png);
-	left: 58%;
+	right: 20px;
 	top: 55%;
 }
 .school .hero .right i {
 	width: 507px;
 	height: 483px;
 	background-image: url(../images/hero2_right@2x.png);
-	left: 55%;
+	left: 100px;
 	top: 54%;
 }
 .intern .hero .left i {
 	width: 643px;
 	height: 498px;
 	background-image: url(../images/hero3_left@2x.png);
-	left: 48%;
+	right: 0;
 	top: 53%;
 }
 .intern .hero .right i {
 	width: 481px;
 	height: 406px;
 	background-image: url(../images/hero3_right@2x.png);
-	left: 57%;
+	left: 120px;
 	top: 55%;
 }
 .job .hero .left i {
 	width: 633px;
 	height: 507px;
 	background-image: url(../images/hero4_left@2x.png);
-	left: 48%;
+	right: 0;
 	top: 51%;
 }
 .job .hero .right i {
 	width: 482px;
 	height: 465px;
 	background-image: url(../images/hero4_right@2x.png);
-	left: 55%;
+	left: 120px;
 	top: 55.8%;
 }
 .gallary .hero .left i {
 	width: 423px;
 	height: 380px;
 	background-image: url(../images/hero5_left@2x.png);
-	left: 60%;
+	right: 20px;
 	top: 54%;
 }
 .gallary .hero .right i {
 	width: 457px;
 	height: 443px;
 	background-image: url(../images/hero5_right@2x.png);
-	left: 55%;
+	left: 120px;
 	top: 57.8%;
 }
 
