@@ -284,6 +284,7 @@ input, textarea {
 .hero {
 	width: 100%;
 	height: 524px;
+	overflow: hidden;
 }
 .hero i {
 	display: block;
@@ -369,7 +370,7 @@ input, textarea {
 	height: 465px;
 	background-image: url(../images/hero4_right@2x.png);
 	left: 120px;
-	top: 55.8%;
+	top: 58%;
 }
 .gallary .hero .left i {
 	width: 423px;
@@ -575,6 +576,7 @@ input, textarea {
 	-webkit-transform: translate(-50%, -50%);
 }
 .timeline .title {
+	clear: both;
 	width: 208px;
 	height: 40px;
 	line-height: 40px;
