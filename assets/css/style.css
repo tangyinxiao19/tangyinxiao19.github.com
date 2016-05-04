@@ -44,10 +44,10 @@ input, textarea {
 	height: 319px;
 	background: url(../images/widget_bg@2x.png) no-repeat center center;
 	background-size: contain;
-	position: absolute;
+	position: fixed;
 	right: 15%;
 	top: -80px;
-	z-index: 5;
+	z-index: 99;
 	animation:hang 0.8s ease-out;
 	-webkit-animation:hang 0.8s ease-out;
 }
