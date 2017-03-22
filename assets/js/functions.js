@@ -2,7 +2,6 @@ $(function () {
 
 	tabSwitch();  //tab切换
 	circleProgress();  //环形进度条
-	fancybox();  //fancybox弹窗相册
 	picCenter();  //图片居中剪裁
 
 })
@@ -102,17 +101,6 @@ function circleProgress () {
 			});
 		}
 	}
-}
-
-
-// fancybox弹窗相册
-function fancybox () {
-	if ($("[data-fancybox]").length > 0) {
-		$("[data-fancybox]").fancybox({
-			speed : 200,
-			loop : true
-		});
-	};
 }
 
 
