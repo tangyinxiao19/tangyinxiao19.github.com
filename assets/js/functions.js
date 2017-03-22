@@ -107,13 +107,10 @@ function circleProgress () {
 
 // fancybox弹窗相册
 function fancybox () {
-	if ($(".fancybox").length > 0) {
-		$('.fancybox').fancybox({
-			prevEffect : 'none',
-			nextEffect : 'none',
-			closeBtn  : false,
-			arrows    : true,
-			nextClick : true
+	if ($("[data-fancybox]").length > 0) {
+		$('[data-fancybox]').fancybox({
+			speed : 200,
+			loop : true
 		});
 	};
 }
