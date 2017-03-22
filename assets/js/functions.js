@@ -108,7 +108,7 @@ function circleProgress () {
 // fancybox弹窗相册
 function fancybox () {
 	if ($("[data-fancybox]").length > 0) {
-		$('[data-fancybox]').fancybox({
+		$("[data-fancybox]").fancybox({
 			speed : 200,
 			loop : true
 		});
