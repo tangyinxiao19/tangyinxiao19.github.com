@@ -942,5 +942,5 @@ a {
 
 
 /*picture centrical crop*/
-.pic_center { display:block; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+.pic_center { display:block; background-repeat: no-repeat; background-position: center top; background-size: cover; }
 .pic_center img { display: none; }
